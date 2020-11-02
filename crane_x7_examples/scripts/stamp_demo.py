@@ -20,7 +20,6 @@ def target_pose(x, y, z):
     target_pose.orientation.w = q[3]
     arm.set_pose_target(target_pose)  # 目標ポーズ設定
     arm.go()  # 実行
-    rospy.sleep(1.0)
 
 def main():	
     rospy.init_node("crane_x7_pick_and_place_controller")
@@ -89,13 +88,15 @@ def main():
     
     # 移動する 捺印場所
     target_pose(0.3, 0.1, 0.3)
+    rospy.sleep(1.0)
     
     # 下ろす 捺印
     target_pose(0.3, 0.1, PICK_Z-0.02)
-    rospy.sleep(1.0)
+    rospy.sleep(2.0)
     
     # ハンドを持ち上げる
     target_pose(0.3, 0.1, 0.3)
+    rospy.sleep(1.0)
     
     # 移動する ホームポジション
     target_pose(0.2, 0.0, 0.3)
