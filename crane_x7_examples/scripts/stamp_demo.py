@@ -83,13 +83,13 @@ def main():
     target_pose(0.2, 0.2, 0.3)
 
     # 下ろす 朱肉をつける
-    target_pose(0.2, 0.2, PICK_Z-0.02)
+    target_pose(0.2, 0.2, PICK_Z)
 
     # 少しだけハンドを持ち上げる
     target_pose(0.2, 0.2, 0.15)
     
     # 下ろす 朱肉をつける2回目
-    target_pose(0.2, 0.2, PICK_Z-0.02)
+    target_pose(0.2, 0.2, PICK_Z)
     
     # ハンドを持ち上げる
     target_pose(0.2, 0.2, 0.3)
@@ -99,8 +99,8 @@ def main():
     rospy.sleep(1.0)
     
     # 下ろす 捺印
-    target_pose(0.3, 0.1, PICK_Z-0.02)
-    
+    target_pose(0.3, 0.1, PICK_Z)
+    rospy.sleep(2.0)
 
     # 首ふり
 #    target_joint_values(6, -1)
