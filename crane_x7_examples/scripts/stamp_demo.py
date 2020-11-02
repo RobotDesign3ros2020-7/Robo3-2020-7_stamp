@@ -5,6 +5,7 @@ import rospy
 import moveit_commander
 import geometry_msgs.msg
 import rosnode
+import math
 from tf.transformations import quaternion_from_euler
 
 def target_pose(x, y, z):
@@ -60,6 +61,18 @@ def main():
     # ハンドを開く
     gripper.set_joint_value_target([0.8, 0.8])
     gripper.go()
+
+    target_joint_values = arm.get_current_joint_values()
+    target_joint_values[6] = math.radians(45)
+    arm.set_joint_value_target(target_joint_values)
+    arm.go()
+    target_joint_values[6] = math.radians(-45)
+    arm.set_joint_value_target(target_joint_values)
+    arm.go()
+
+
+
+
 
     # 掴みに行く
     target_pose(0.2, 0.0, PICK_Z)
