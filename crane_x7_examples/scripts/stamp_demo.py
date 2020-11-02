@@ -104,7 +104,7 @@ def main():
     # 角度変更
     target_joint_values(5, -0.785398)
     rospy.sleep(1.0)
-    target_joint_values(5, 0.785398)
+    target_joint_values(5, +0.785398)
     rospy.sleep(1.0)
     
     # ハンドを持ち上げる
