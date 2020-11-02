@@ -80,33 +80,35 @@ def main():
     target_pose(0.2, 0.0, 0.3)
 
     # 移動する 朱肉まで
-#    target_pose(0.2, 0.2, 0.3)
+    target_pose(0.2, 0.2, 0.3)
 
     # 下ろす 朱肉をつける
-#    target_pose(0.2, 0.2, PICK_Z-0.02)
+    target_pose(0.2, 0.2, PICK_Z-0.02)
 
     # 少しだけハンドを持ち上げる
-#    target_pose(0.2, 0.2, 0.15)
+    target_pose(0.2, 0.2, 0.15)
     
     # 下ろす 朱肉をつける2回目
-#    target_pose(0.2, 0.2, PICK_Z-0.02)
+    target_pose(0.2, 0.2, PICK_Z-0.02)
     
     # ハンドを持ち上げる
-#    target_pose(0.2, 0.2, 0.3)
+    target_pose(0.2, 0.2, 0.3)
     
     # 移動する 捺印場所
     target_pose(0.3, 0.1, 0.3)
     rospy.sleep(1.0)
     
     # 下ろす 捺印
-#    target_pose(0.3, 0.1, PICK_Z-0.02)
+    target_pose(0.3, 0.1, PICK_Z-0.02)
     
-    # 角度変更
-    target_joint_values(5, -0.174533)
+"""
+    # 首ふり
+    target_joint_values(6, -1)
     rospy.sleep(1.0)
-    target_joint_values(5, +0.174533)
+    target_joint_values(6, 1)
     rospy.sleep(1.0)
-    
+"""
+        
     # ハンドを持ち上げる
     target_pose(0.3, 0.1, 0.3)
     rospy.sleep(1.0)
