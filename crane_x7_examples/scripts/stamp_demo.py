@@ -102,9 +102,9 @@ def main():
     target_pose(0.3, 0.1, PICK_Z-0.02)
     
     # 角度変更
-    target_joint_values(8, -0.785398)
+    target_joint_values(5, -0.785398)
     rospy.sleep(1.0)
-#    target_joint_values(6, -10)
+    target_joint_values(5, -0.785398)
     rospy.sleep(1.0)
     
     # ハンドを持ち上げる
