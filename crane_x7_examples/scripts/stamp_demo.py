@@ -8,9 +8,10 @@ import rosnode
 from tf.transformations import quaternion_from_euler
 
 def target_pose(x, y, z):
+		arm = moveit_commander.MoveGroupCommander("arm")
 		target_pose = geometry_msgs.msg.Pose()
-    target_pose.position.x = x
-    target_pose.position.y = y
+		target_pose.position.x = x
+		target_pose.position.y = y
     target_pose.position.z = z
     q = quaternion_from_euler(-3.14, 0.0, -3.14/2.0)  # 上方から掴みに行く場合
     target_pose.orientation.x = q[0]
@@ -22,7 +23,7 @@ def target_pose(x, y, z):
     rospy.sleep(1.0)
 
 def main():	
-    rospy.init_node("crane_x7_pick_and_place_controller")
+		rospy.init_node("crane_x7_pick_and_place_controller")
     robot = moveit_commander.RobotCommander()
     arm = moveit_commander.MoveGroupCommander("arm")
     arm.set_max_velocity_scaling_factor(0.4)
