@@ -63,43 +63,43 @@ def main():
     gripper.go()
 
     # 掴む準備をする
-    target_pose(0.2, 0.0, 0.3)
+    target_pose(0.35, 0.13, 0.3)
 
     # ハンドを開く
     gripper.set_joint_value_target([0.8, 0.8])
     gripper.go()
 
     # 掴みに行く
-    target_pose(0.2, 0.0, PICK_Z)
+    target_pose(0.35, 0.13, PICK_Z)
 
     # ハンドを閉じる
-    gripper.set_joint_value_target([0.4, 0.4])
+    gripper.set_joint_value_target([0.05, 0.05])
     gripper.go()
 
     # 持ち上げる
-    target_pose(0.2, 0.0, 0.3)
+    target_pose(0.35, 0.13, 0.3)
 
     # 移動する 朱肉まで
-    target_pose(0.2, 0.2, 0.3)
+    target_pose(0.35, -0.11, 0.3)
 
     # 下ろす 朱肉をつける
-    target_pose(0.2, 0.2, PICK_Z)
+    target_pose(0.35, -0.11, PICK_Z)
 
     # 少しだけハンドを持ち上げる
-    target_pose(0.2, 0.2, 0.15)
+    target_pose(0.35, -0.11, 0.15)
     
     # 下ろす 朱肉をつける2回目
-    target_pose(0.2, 0.2, PICK_Z)
+    target_pose(0.35, -0.11, PICK_Z)
     
     # ハンドを持ち上げる
-    target_pose(0.2, 0.2, 0.3)
+    target_pose(0.35, -0.11, 0.3)
     
     # 移動する 捺印場所
-    target_pose(0.3, 0.1, 0.3)
+    target_pose(0.2, 0.0, 0.3)
     rospy.sleep(1.0)
     
     # 下ろす 捺印
-    target_pose(0.3, 0.1, PICK_Z)
+    target_pose(0.2, 0.0, PICK_Z)
     rospy.sleep(2.0)
 
     # 首ふり
@@ -109,7 +109,7 @@ def main():
 #    rospy.sleep(1.0)
 
     # ハンドを持ち上げる
-    target_pose(0.3, 0.1, 0.3)
+    target_pose(0.2, 0.0, 0.3)
     rospy.sleep(1.0)
     
     # 移動する ホームポジション
