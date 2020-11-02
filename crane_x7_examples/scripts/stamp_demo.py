@@ -99,7 +99,7 @@ def main():
     rospy.sleep(1.0)
     
     # 下ろす 捺印
-    target_pose(0.3, 0.1, PICK_Z)
+#    target_pose(0.3, 0.1, PICK_Z-0.02)
     
     # 角度変更
     target_joint_values(5, -0.785398)
