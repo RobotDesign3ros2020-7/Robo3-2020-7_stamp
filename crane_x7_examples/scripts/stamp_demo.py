@@ -34,7 +34,7 @@ def main():
     robot = moveit_commander.RobotCommander()
     arm = moveit_commander.MoveGroupCommander("arm")
     arm.set_max_velocity_scaling_factor(0.4)
-    PICK_Z = 0.13                   # 掴む時のハンドの高さ
+    PICK_Z = 0.12                   # 掴む時のハンドの高さ
     gripper = moveit_commander.MoveGroupCommander("gripper")
 
     while len([s for s in rosnode.get_node_names() if 'rviz' in s]) == 0:
@@ -80,19 +80,19 @@ def main():
     target_pose(0.2, 0.0, 0.3)
 
     # 移動する 朱肉まで
-    target_pose(0.2, 0.2, 0.3)
+#    target_pose(0.2, 0.2, 0.3)
 
     # 下ろす 朱肉をつける
-    target_pose(0.2, 0.2, PICK_Z-0.02)
+#    target_pose(0.2, 0.2, PICK_Z-0.02)
 
     # 少しだけハンドを持ち上げる
-    target_pose(0.2, 0.2, 0.15)
+#    target_pose(0.2, 0.2, 0.15)
     
     # 下ろす 朱肉をつける2回目
-    target_pose(0.2, 0.2, PICK_Z-0.02)
+#    target_pose(0.2, 0.2, PICK_Z-0.02)
     
     # ハンドを持ち上げる
-    target_pose(0.2, 0.2, 0.3)
+#    target_pose(0.2, 0.2, 0.3)
     
     # 移動する 捺印場所
     target_pose(0.3, 0.1, 0.3)
@@ -102,9 +102,10 @@ def main():
     target_pose(0.3, 0.1, PICK_Z-0.02)
     
     # 角度変更
-    target_joint_values(6, -45)
+    target_joint_values(7, -5)
     rospy.sleep(1.0)
-    target_joint_values(6, 90)
+    target_joint_values(7, -10)
+    rospy.sleep(1.0)
     
     # ハンドを持ち上げる
     target_pose(0.3, 0.1, 0.3)
