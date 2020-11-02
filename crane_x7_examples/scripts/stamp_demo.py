@@ -10,7 +10,7 @@ from tf.transformations import quaternion_from_euler
 def target_pose(x, y, z):
     arm = moveit_commander.MoveGroupCommander("arm")
     target_pose = geometry_msgs.msg.Pose()
-    tavrget_pose.position.x = x
+    target_pose.position.x = x
     target_pose.position.y = y
     target_pose.position.z = z
     q = quaternion_from_euler(-3.14, 0.0, -3.14/2.0)  # 上方から掴みに行く場合
