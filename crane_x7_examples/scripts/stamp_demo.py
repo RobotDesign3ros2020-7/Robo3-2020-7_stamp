@@ -101,13 +101,12 @@ def main():
     # 下ろす 捺印
     target_pose(0.3, 0.1, PICK_Z-0.02)
     
-"""
+
     # 首ふり
-    target_joint_values(6, -1)
-    rospy.sleep(1.0)
-    target_joint_values(6, 1)
-    rospy.sleep(1.0)
-"""
+#    target_joint_values(6, -1)
+#    rospy.sleep(1.0)
+#    target_joint_values(6, 1)
+#    rospy.sleep(1.0)
 
     # ハンドを持ち上げる
     target_pose(0.3, 0.1, 0.3)
