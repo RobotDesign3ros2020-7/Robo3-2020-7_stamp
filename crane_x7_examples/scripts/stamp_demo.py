@@ -23,6 +23,7 @@ def target_pose(x, y, z):
     arm.go()  # 実行
 
 def target_joint_values(a, b):
+    arm = moveit_commander.MoveGroupCommander("arm")
     target_joint_values = arm.get_current_joint_values()
     target_joint_values[a] = math.radians(b)
     arm.set_joint_value_target(target_joint_values)    # 目標ポーズ設定
