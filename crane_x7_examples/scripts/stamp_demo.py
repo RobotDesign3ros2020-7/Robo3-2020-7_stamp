@@ -13,7 +13,7 @@ def target_pose(x, y, z):
     target_pose.position.x = x
     target_pose.position.y = y
     target_pose.position.z = z
-    q = quaternion_from_euler(-3.14, 0.0, -3.14/1.0)  # 上方から掴みに行く場合
+    q = quaternion_from_euler(-3.14, 0.0, -3.14/2.0)  # 上方から掴みに行く場合
     target_pose.orientation.x = q[0]
     target_pose.orientation.y = q[1]
     target_pose.orientation.z = q[2]
