@@ -8,22 +8,22 @@ import rosnode
 from tf.transformations import quaternion_from_euler
 
 def target_pose(x, y, z):
-		arm = moveit_commander.MoveGroupCommander("arm")
-		target_pose = geometry_msgs.msg.Pose()
-		target_pose.position.x = x
-		target_pose.position.y = y
-		target_pose.position.z = z
-		q = quaternion_from_euler(-3.14, 0.0, -3.14/2.0)  # 上方から掴みに行く場合
-		target_pose.orientation.x = q[0]
-		target_pose.orientation.y = q[1]
-		target_pose.orientation.z = q[2]
-		target_pose.orientation.w = q[3]
-		arm.set_pose_target(target_pose)  # 目標ポーズ設定
-		arm.go()  # 実行
-		rospy.sleep(1.0)
+    arm = moveit_commander.MoveGroupCommander("arm")
+    target_pose = geometry_msgs.msg.Pose()
+    tavrget_pose.position.x = x
+    target_pose.position.y = y
+    target_pose.position.z = z
+    q = quaternion_from_euler(-3.14, 0.0, -3.14/2.0)  # 上方から掴みに行く場合
+    target_pose.orientation.x = q[0]
+    target_pose.orientation.y = q[1]
+    target_pose.orientation.z = q[2]
+    target_pose.orientation.w = q[3]
+    arm.set_pose_target(target_pose)  # 目標ポーズ設定
+    arm.go()  # 実行
+    rospy.sleep(1.0)
 
 def main():	
-		rospy.init_node("crane_x7_pick_and_place_controller")
+    rospy.init_node("crane_x7_pick_and_place_controller")
     robot = moveit_commander.RobotCommander()
     arm = moveit_commander.MoveGroupCommander("arm")
     arm.set_max_velocity_scaling_factor(0.4)
