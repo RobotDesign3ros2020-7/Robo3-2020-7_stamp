@@ -25,7 +25,7 @@ def target_pose(x, y, z):
 def main():	
 		rospy.init_node("crane_x7_pick_and_place_controller")
     robot = moveit_commander.RobotCommander()
-    arm = moveit_commander.MoveGroupCommander("arm")
+
     arm.set_max_velocity_scaling_factor(0.4)
     PICK_Z = 0.12                   # 掴む時のハンドの高さ
     gripper = moveit_commander.MoveGroupCommander("gripper")
