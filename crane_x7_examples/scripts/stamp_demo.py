@@ -21,6 +21,7 @@ def target_pose(x, y, z):
     arm.set_pose_target(target_pose)  # 目標ポーズ設定
     arm.go()  # 実行
 
+
 def main():	
     rospy.init_node("crane_x7_pick_and_place_controller")
     robot = moveit_commander.RobotCommander()
