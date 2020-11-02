@@ -26,7 +26,7 @@ def main():
     robot = moveit_commander.RobotCommander()
     arm = moveit_commander.MoveGroupCommander("arm")
     arm.set_max_velocity_scaling_factor(0.4)
-    PICK_Z = 0.12                   # 掴む時のハンドの高さ
+    PICK_Z = 0.05                   # 掴む時のハンドの高さ
     gripper = moveit_commander.MoveGroupCommander("gripper")
 
     while len([s for s in rosnode.get_node_names() if 'rviz' in s]) == 0:
