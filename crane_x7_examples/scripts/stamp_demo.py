@@ -108,7 +108,7 @@ def main():
     target_joint_values(6, 1)
     rospy.sleep(1.0)
 """
-    
+
     # ハンドを持ち上げる
     target_pose(0.3, 0.1, 0.3)
     rospy.sleep(1.0)
