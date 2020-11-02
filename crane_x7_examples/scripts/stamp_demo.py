@@ -22,6 +22,12 @@ def target_pose(x, y, z):
     arm.set_pose_target(target_pose)  # 目標ポーズ設定
     arm.go()  # 実行
 
+def target_joint_values(a, b):
+    target_joint_values = arm.get_current_joint_values()
+    target_joint_values[a] = math.radians(b)
+    arm.set_joint_value_target(target_joint_values)    # 目標ポーズ設定
+    arm.go()    # 実行
+
 def main():	
     rospy.init_node("crane_x7_pick_and_place_controller")
     robot = moveit_commander.RobotCommander()
@@ -62,18 +68,6 @@ def main():
     gripper.set_joint_value_target([0.8, 0.8])
     gripper.go()
 
-    target_joint_values = arm.get_current_joint_values()
-    target_joint_values[6] = math.radians(45)
-    arm.set_joint_value_target(target_joint_values)
-    arm.go()
-    target_joint_values[6] = math.radians(-45)
-    arm.set_joint_value_target(target_joint_values)
-    arm.go()
-
-
-
-
-
     # 掴みに行く
     target_pose(0.2, 0.0, PICK_Z)
 
@@ -105,7 +99,11 @@ def main():
     
     # 下ろす 捺印
     target_pose(0.3, 0.1, PICK_Z-0.02)
-    rospy.sleep(2.0)
+    
+    # 角度変更
+    target_joint_values(6, -45)
+    rospy.sleep(1.0)
+    target_joint_values(6, 90)
     
     # ハンドを持ち上げる
     target_pose(0.3, 0.1, 0.3)
