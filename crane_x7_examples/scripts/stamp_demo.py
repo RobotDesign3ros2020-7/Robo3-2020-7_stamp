@@ -73,26 +73,26 @@ def main():
     target_pose(0.35, 0.13, PICK_Z)
 
     # ハンドを閉じる
-    gripper.set_joint_value_target([0.1, 0.1])
+    gripper.set_joint_value_target([0.19, 0.19])
     gripper.go()
 
     # 持ち上げる
     target_pose(0.35, 0.13, 0.3)
 
     # 移動する 朱肉まで
-#    target_pose(0.35, -0.11, 0.3)
+    target_pose(0.35, -0.11, 0.3)
 
     # 下ろす 朱肉をつける
-#    target_pose(0.35, -0.11, PICK_Z)
+    target_pose(0.35, -0.11, PICK_Z)
 
     # 少しだけハンドを持ち上げる
-#    target_pose(0.35, -0.11, 0.15)
+    target_pose(0.35, -0.11, 0.15)
     
     # 下ろす 朱肉をつける2回目
-#    target_pose(0.35, -0.11, PICK_Z)
+    target_pose(0.35, -0.11, PICK_Z)
     
     # ハンドを持ち上げる
-#    target_pose(0.35, -0.11, 0.3)
+    target_pose(0.35, -0.11, 0.3)
     
     # 移動する 捺印場所
     target_pose(0.2, 0.0, 0.3)
