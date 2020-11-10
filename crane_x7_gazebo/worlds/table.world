@@ -15,12 +15,31 @@
       <pose>0.29 0 0 0 0 1.5708</pose>
     </model>
 
+		<!-- stamp_model -->
     <model name="stamp_model">
       <include>
         <uri>model://stamp_model</uri>
       </include>
 
       <pose>0.35 0.13 0 0 0 1.5708</pose>
+    </model>
+    
+    <!-- inkpad_model -->
+    <model name="inkpad_model">
+      <include>
+        <uri>model://inkpad_model</uri>
+      </include>
+
+      <pose>0.35 -0.11 0 0 0 1.5708</pose>
+    </model>
+    
+    <!-- mat_model -->
+    <model name="mat_model">
+      <include>
+        <uri>model://mat_model</uri>
+      </include>
+
+      <pose>0.2 0 0 0 0 1.5708</pose>
     </model>
 
     <model name="ground_plane">
