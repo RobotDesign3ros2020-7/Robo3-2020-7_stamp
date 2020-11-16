@@ -15,83 +15,70 @@
       <pose>0.29 0 0 0 0 1.5708</pose>
     </model>
 
-    <model name="stamp">
-        <include>
-            <uri>model://stampcover_model</uri>
-        </include>
-        <pose>0.33 0.15 1.0 0 0 0</pose>
+    <model name="stampcover_model">
+        <pose>0.33 0.15 1.5 0 0 0</pose>
+        <link name="link">
+            <inertial>
+                <mass>0.012</mass>
+                <inertia>
+                    <ixx>0.0</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.0</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.0</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://stampcover_model/stampcover.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://stampcover_model/stampcover.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+
+    <model name="inkpad_model">
+        <pose>0.33 -0.15 1.5 0 0 0</pose>
+        <link name="link">
+            <inertial>
+                <mass>0.012</mass>
+                <inertia>
+                    <ixx>0.0</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.0</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.0</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://inkpad_model/inkpad.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://inkpad_model/inkpad.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
     </model>
 
 
-
-    <model name="cup1">
-  <pose>0.33 0.15 1.0 0 0 0</pose>
-    <link name="link">
-      <inertial>
-        <mass>1.0</mass>
-        <inertia>
-		  <ixx>0.083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.083</izz>
-        </inertia>
-      </inertial>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-		  <radius>0.015</radius>
-		  <length>0.06</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-		  <radius>0.015</radius>
-		  <length>0.06</length>
-          </cylinder>
-        </geometry>
-      </visual>
-    </link>
-  </model>
-
-
-    <model name="cup2">
-  <pose>0.33 -0.15 1.5 0 0 0</pose>
-    <link name="link">
-      <inertial>
-        <mass>0.01</mass>
-        <inertia>
-		  <ixx>0.083</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.083</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.083</izz>
-        </inertia>
-      </inertial>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-		  <radius>0.06</radius>
-		  <length>0.002</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-		  <radius>0.05</radius>
-		  <length>0.02</length>
-          </cylinder>
-        </geometry>
-      </visual>
-    </link>
-  </model>
-
-    <model name="ground_plane">
+  <model name="ground_plane">
       <include>
         <uri>model://ground_plane</uri>
       </include>
