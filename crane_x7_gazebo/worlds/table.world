@@ -15,13 +15,22 @@
       <pose>0.29 0 0 0 0 1.5708</pose>
     </model>
 
+    <model name="stamp">
+        <include>
+            <uri>model://stampcover_model</uri>
+        </include>
+        <pose>0.33 0.15 1.0 0 0 0</pose>
+    </model>
+
+
+
     <model name="cup1">
-  <pose>0.33 0.15 1.5 0 0 0</pose>
+  <pose>0.33 0.15 1.0 0 0 0</pose>
     <link name="link">
       <inertial>
-        <mass>0.01</mass>
+        <mass>1.0</mass>
         <inertia>
-		<ixx>0.083</ixx>
+		  <ixx>0.083</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
           <iyy>0.083</iyy>
@@ -32,16 +41,16 @@
       <collision name="collision">
         <geometry>
           <cylinder>
-		  <radius>0.05</radius>
-		  <length>0.02</length>
+		  <radius>0.015</radius>
+		  <length>0.06</length>
           </cylinder>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <cylinder>
-		  <radius>0.012</radius>
-		  <length>0.1</length>
+		  <radius>0.015</radius>
+		  <length>0.06</length>
           </cylinder>
         </geometry>
       </visual>
@@ -55,7 +64,7 @@
       <inertial>
         <mass>0.01</mass>
         <inertia>
-		<ixx>0.083</ixx>
+		  <ixx>0.083</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
           <iyy>0.083</iyy>
@@ -81,7 +90,6 @@
       </visual>
     </link>
   </model>
-
 
     <model name="ground_plane">
       <include>
