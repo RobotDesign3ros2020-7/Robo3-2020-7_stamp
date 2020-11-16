@@ -85,7 +85,7 @@ def main():
     set_pos(0.33,0.15,0.23)
     set_pos(0.33,0.15,0.13)
 
-    open_close(0.1)
+    open_close(0.23)
 
     set_pos(0.33,0.15,0.23)
     set_pos(0.33,0.,0.23)
