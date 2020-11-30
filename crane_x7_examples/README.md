@@ -3,7 +3,7 @@
 ### インストール方法
 ```sh
 cd ~/catkin_ws/src/
-git clone 
+git clone https://github.com/RobotDesign3ros2020-7/Robo3-2020-7_stamp.git
 cd ..
 catkin_make
 rosdep install -r -y --from-path --ignore-src crane_x7_ros
