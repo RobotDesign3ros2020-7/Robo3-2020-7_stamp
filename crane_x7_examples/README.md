@@ -1,6 +1,13 @@
 [English](README.en.md) | [日本語](README.md)
 
-## 動作環境
+### インストール方法
+```sh
+cd ~/catkin_ws/src/
+git clone 
+cd ..
+catkin_make
+rosdep install -r -y --from-path --ignore-src crane_x7_ros
+```
 
 ### 実機を使う場合
 
@@ -8,14 +15,8 @@
 制御信号ケーブルを接続した状態で次のコマンドを実行します。
 
 ```sh
-roslaunch crane_x7_bringup demo.launch fake_execution:=false
-```
-
-ケーブルの接続ポート名はデフォルトで`/dev/ttyUSB0`です。
-別のポート名(例: /dev/ttyUSB1)を使う場合は次のコマンドを実行します。
-
-```sh
-roslaunch crane_x7_bringup demo.launch fake_execution:=false port:=/dev/ttyUSB1
+sudo chmod 777 /dev/ttyUSB0
+roslaunch crane_x7_control crane_x7_control.launch
 ```
 
 ### Gazeboを使う場合
@@ -24,4 +25,10 @@ roslaunch crane_x7_bringup demo.launch fake_execution:=false port:=/dev/ttyUSB1
 
 ```sh
 roslaunch crane_x7_gazebo crane_x7_with_table.launch
+```
+
+### 実行方法
+以下のコマンドで実行します。
+```sh
+rosrun crane_x7_example rats.py 
 ```
