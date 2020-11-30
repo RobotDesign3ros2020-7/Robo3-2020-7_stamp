@@ -1,28 +1,5 @@
 [English](README.en.md) | [日本語](README.md)
 
-# crane_x7_examples
-
-CRANE-X7のためのパッケージ、 `crane_x7` で用いるサンプルをまとめたパッケージです。
-
-## システムの起動方法
-
-CRANE-X7の制御信号ケーブルを制御用パソコンへ接続します。
-Terminalを開き、`crane_x7_bringup`の`demo.launch`を起動します。
-このlaunchファイルには次のオプションが用意されています。
-
-- fake_execution (default: true)
-
-実機を使用する/使用しない
-
-### シミュレータを使う場合
-
-実機無しで動作を確認する場合、
-制御信号ケーブルを接続しない状態で次のコマンドを実行します。
-
-```sh
-roslaunch crane_x7_bringup demo.launch fake_execution:=true
-```
-
 ### 実機を使う場合
 
 実機で動作を確認する場合、
