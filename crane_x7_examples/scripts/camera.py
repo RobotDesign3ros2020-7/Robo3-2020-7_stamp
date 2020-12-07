@@ -46,7 +46,7 @@ def detect_red_color(img):
     cv2.imwrite("C:\prog\python\\test\\red_mask.png", red_mask)
     cv2.imwrite("C:\prog\python\\test\\red_masked_img.png", red_masked_img)
 
-    def start_node():
+def start_node():
     rospy.init_node('img_proc')
     rospy.loginfo('img_proc node started')
     rospy.Subscriber("image_raw", Image, process_image)
